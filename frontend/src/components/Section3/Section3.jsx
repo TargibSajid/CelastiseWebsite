@@ -1,4 +1,7 @@
 import React, { useEffect } from 'react';
+import { FaFacebookF, FaLinkedinIn, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
 
 
 function Section3() {
@@ -47,16 +50,76 @@ function Section3() {
             </div>
 
             <div class="w-full flex justify-center gap-4 p-4 mt-10 h-230  ">
-            
+
                 <div class="w-1/2 h-7/8  bg-[url('/Background/CasioBG.png')]   bg-no-repeat bg-position-[center_20%]"></div>
 
-                
+
                 <div class="w-1/2 h-7/8  bg-[url('/Background/PatekBG.jpg')]  bg-cover bg-center bg-no-repeat "></div>
+            </div>
+
+
+            <div class="w-full bg-black py-32 px-8 text-center">
+                <h1 class="text-7xl font-medium text-[rgb(225,129,84)] mb-8">
+                    Find Your Perfect Timepiece Today
+                </h1>
+
+                <p class="text-2xl text-amber-50 font-sans max-w-5xl mx-auto leading-relaxed mb-14">
+                    Browse our extensive collection of premium watches from world-renowned brands.
+                    Start your journey to owning the perfect timepiece that reflects your unique
+                    style and sophistication.
+                </p>
+
+                <button class="text-2xl bg-transaprent border text-white py-5 px-14  duration-500 hover:bg-[rgb(225,129,84)] transition">
+                    Shop Now
+                </button>
             </div>
 
 
 
 
+
+
+
+
+
+
+            <div class="w-full bg-[rgb(31,31,31)] py-24 px-10 flex justify-between items-start">
+
+                <div class="w-1/3">
+                    <h1 class="text-4xl text-[rgb(225,129,84)] font-semibold mb-6">Celastise</h1>
+                    <p class="text-white text-xl leading-relaxed font-sans">
+                        Discover premium wrist watches
+                        from renowned brands like Patek
+                        Philippe, Fossil, Casio, and Olevs at
+                        Celastise.
+                    </p>
+                </div>
+
+
+                <div class="w-1/3">
+                    <h2 class="text-2xl text-[rgb(225,129,84)] font-semibold mb-6">Pages</h2>
+                    <ul class="space-y-3 text-xl text-white font-sans">
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Blog</li>
+                        <li>Contact</li>
+                    </ul>
+                </div>
+
+
+                <div class="w-1/3">
+                    <h2 class="text-3xl text-[rgb(225,129,84)] font-semibold mb-6">Social</h2>
+                    <div class="flex items-center space-x-10 text-4xl">
+                        <FaFacebookF class="hover:text-[rgb(225,129,84)] duration-500 text-blue-600 cursor-pointer"/>
+                        <FaWhatsapp class="hover:text-[rgb(225,129,84)] duration-500 text-green-500 cursor-pointer"/>
+                        <FaInstagram class="hover:text-[rgb(225,129,84)] duration-500 text-red-600 cursor-pointer"/>
+
+                    </div>
+
+
+                </div>
+
+            </div>
 
 
 

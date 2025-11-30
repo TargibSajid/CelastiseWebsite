@@ -57,7 +57,7 @@ function Section2() {
                     <h2 class="text-6xl font-serif text-[rgb(225,129,84)]  mb-6">
                         What Our Customers Say
                     </h2>
-                    <p class="text-3xl italic text-white leading-relaxed w-200 text-right">
+                    <p class="text-3xl italic text-white leading-relaxed w-200 text-left">
                         The quality of watches at Celastise exceeded my expectations completely.
                         My Patek Philippe purchase was seamless and arrived perfectly packaged.
                     </p>
