@@ -4,16 +4,18 @@ import React, { useEffect } from 'react';
 function Header() {
 
   return (
-    <div  class="bg-[rgb(31,31,31)] text-black py-2 px-4 rounded top-0 left-0 w-full h-39 shadow-md">
-    <header class = "w-full h-full relative bg-transparent">
-        <img src="/Background/Logo.png" width="300" height="200" alt="Logo" class = "left-50 relative bottom-10 max-sm:w-40  max-sm:top-3 max-sm:left-0  \\"/>
-
-        <nav class = "text-white text-3xl font-sans">
-            <ul class = "flex space-x-4 absolute right-70 top-14 ">
-                <li class ="mr-10 ml-10"><a href="#home" class="hover:text-[rgb(225,129,84)] duration-500 @max-3xs:::text-blue-400">Home</a></li>
-                <li class ="mr-10 ml-10"><a href="#about" class="hover:text-[rgb(225,129,84)] duration-500" >About</a></li>
-                <li class ="mr-10 ml-10"><a href="#services" class="hover:text-[rgb(225,129,84)] duration-500" >Services</a></li>
-                <li class ="mr-10 ml-10"><a href="#contact" class="hover:text-[rgb(225,129,84)] duration-500 max-sm:text-blue-400" >Contact</a></li>
+    <div  class="bg-[rgb(31,31,31)] text-black  md:w-full  shadow-md">
+    <header class = "w-full h-full  relative bg-transparent grid grid-cols-2 grid-wrap items-center justify-center">
+      <div class = " w-full h-full flex justify-center">
+         <img src="/Background/Logo.png" class= " w-[32%] max-md:w-full relative object-cotain " alt="Logo" />
+ </div>
+        
+        <nav class = "text-white text-[clamp(1rem,1.4vw,2rem)] font-sans h-full">
+            <ul class = "flex flex-row h-full w-full justify-start items-center flex-wrap max-md:flex-col gap-4">
+                <li class =" m-[min(20px,20%)]"><a href="#home" class="hover:text-[rgb(225,129,84)] duration-500 ">Home</a></li>
+                <li class ="m-[min(20px,20%)]"><a href="#about" class="hover:text-[rgb(225,129,84)] duration-500" >About</a></li>
+                <li class ="m-[min(20px,20%)]"><a href="#services" class="hover:text-[rgb(225,129,84)] duration-500" >Services</a></li>
+                <li class ="m-[min(20px,20%)]"><a href="#contact" class="hover:text-[rgba(225,129,84,0.82)] duration-500 " >Contact</a></li>
             </ul>
 
         </nav> 
