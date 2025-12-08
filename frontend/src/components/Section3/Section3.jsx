@@ -83,11 +83,11 @@ function Section3() {
 
 
 
-            <div class="w-full bg-black grid grid-cols-3 p-[3%]">
+            <div class="w-full bg-black grid sm:grid-cols-3 max-sm:grid-rows-3 p-[3%]">
 
-                <div class="w-full">
-                    <h1 class="text-4xl text-[rgb(225,129,84)] font-semibold mb-6">Celastise</h1>
-                    <p class="text-white text-xl leading-relaxed font-sans">
+                <div class="w-full p-[3%]">
+                    <h1 class="text-4xl text-[rgb(225,129,84)] font-semibold max-sm:text-center mb-6">Celastise</h1>
+                    <p class="text-white text-xl leading-relaxed max-sm:text-center max-sm:justify-self-center font-sans w-[70%] ">
                         Discover premium wrist watches
                         from renowned brands like Patek
                         Philippe, Fossil, Casio, and Olevs at
@@ -96,9 +96,9 @@ function Section3() {
                 </div>
 
 
-                <div class="w-1/3">
-                    <h2 class="text-2xl text-[rgb(225,129,84)] font-semibold mb-6">Pages</h2>
-                    <ul class="space-y-3 text-xl text-white font-sans">
+                <div class="w-full p-[3%]">
+                    <h2 class="text-2xl text-[rgb(225,129,84)] max-sm:text-center font-semibold mb-6">Pages</h2>
+                    <ul class="space-y-3 text-xl text-white  max-sm:text-center max-sm:justify-self-center font-sans w-[50] ">
                         <li>Home</li>
                         <li>About</li>
                         <li>Blog</li>
@@ -107,9 +107,9 @@ function Section3() {
                 </div>
 
 
-                <div class="w-1/3">
-                    <h2 class="text-3xl text-[rgb(225,129,84)] font-semibold mb-6">Social</h2>
-                    <div className="flex items-center space-x-10 text-4xl">
+                <div class="w-full p-[3%]">
+                    <h2 class="text-3xl text-[rgb(225,129,84)] max-sm:text-center font-semibold mb-6">Social</h2>
+                    <div className="flex items-center max-sm:justify-center space-x-10 text-4xl">
                         <a href="https://www.facebook.com/celastise" target="_blank" rel="noopener noreferrer">
                             <FaFacebookF className="hover:text-[rgb(225,129,84)] duration-500 text-blue-600 cursor-pointer" />
                         </a>
