@@ -7,7 +7,7 @@ import { FaXTwitter } from "react-icons/fa6";
 function Section3() {
     return (
         <section id="Section3" class="w-full h-auto bg-black">
-            <div class="w-full  h-[950px] bg-[url('/Background/LogoRose.png')]  bg-cover bg-fixed bg-position-[center_40%] border-[rgb(225,129,84)] border-4 ">
+            <div class="w-full  lg:h-[950px] h-[500px] bg-[url('/Background/LogoRose.png')]  lg:bg-cover  max-lg:bg-no-repeat max-lg:bg-size-[100%_100%] lg:bg-fixed bg-position-[center_40%] border-[rgb(225,129,84)] border-4 ">
             </div>
 
 
@@ -16,13 +16,13 @@ function Section3() {
                     Why Choose Celastise
                 </h2>
 
-                <div class="grid w-full grid-cols-2 gap-0">
+                <div class="grid w-full sm:grid-cols-2  max-sm:grid-rows-2 gap-0">
 
-                    <div class="w-full  justify-center items-center relative m-20 ml-70">
-                        <h3 class="font-playfair text-left text-4xl text-[rgb(225,129,84)] mb-6">
+                    <div class="w-full  justify-center items-center p-[10%] ">
+                        <h3 class="font-playfair  text-center text-4xl text-[rgb(225,129,84)] mb-6">
                             Authentic Timepieces
                         </h3>
-                        <p class="text-2xl leading-8 text-white text-left w-[70%] font-sans ">
+                        <p class="text-[clamp(1rem,1.5vw,1.5rem)] leading-8 text-white text-left max-sm:text-center   font-sans ">
                             Every watch in our collection is guaranteed authentic and sourced directly
                             from authorized dealers. We conduct thorough quality inspections to
                             ensure each timepiece meets our high standards. Our authentication process
@@ -32,11 +32,11 @@ function Section3() {
                         </p>
                     </div>
 
-                    <div class="w-full justify-center items-center relative m-20">
-                        <h3 class="font-playfair text-left text-4xl text-[rgb(225,129,84)] mb-6">
+                    <div class="w-full justify-center items-center p-[10%] ">
+                        <h3 class="font-playfair text-center text-4xl text-[rgb(225,129,84)] mb-6">
                             Expert Customer Service
                         </h3>
-                        <p class="text-2xl leading-8 text-white text-left w-[70%] font-sans ">
+                        <p class="text-[clamp(1rem,1.5vw,1.5rem)] leading-8 text-white text-left max-sm:text-center font-sans ">
                             Our knowledgeable team consists of watch enthusiasts who understand
                             the intricacies of fine timepieces. We provide personalized recommendations
                             based on your style preferences and budget requirements. Our customer service
@@ -49,16 +49,16 @@ function Section3() {
                 </div>
             </div>
 
-            <div class="w-full flex justify-center gap-4 p-4 mt-10 h-230  ">
+            <div class="w-full sm:flex sm:justify-center gap-4 p-4 mt-10 h-230 max-sm:grid max-sm:grid-rows-2 ">
 
-                <div class="w-1/2 h-7/8  bg-[url('/Background/CasioBG.png')]   bg-no-repeat bg-position-[center_20%]"></div>
+                <div class="sm:w-1/2 sm:h-7/8  bg-[url('/Background/CasioBG.png')]   bg-cover bg-center bg-no-repeat"></div>
 
 
-                <div class="w-1/2 h-7/8  bg-[url('/Background/PatekBG.jpg')]  bg-cover bg-center bg-no-repeat "></div>
+                <div class="sm:w-1/2 sm:h-7/8  bg-[url('/Background/PatekBG.jpg')]  bg-cover bg-center bg-no-repeat "></div>
             </div>
 
 
-            <div class="w-full bg-black py-32 px-8 text-center">
+            <div class="w-full bg-[rgb(31,31,31)] py-32 px-8 text-center">
                 <h1 class="text-7xl font-medium text-[rgb(225,129,84)] mb-8">
                     Find Your Perfect Timepiece Today
                 </h1>
@@ -69,7 +69,7 @@ function Section3() {
                     style and sophistication.
                 </p>
 
-                <button class="text-2xl bg-transaprent border text-white py-5 px-14  duration-500 hover:bg-[rgb(225,129,84)] transition">
+                <button class="text-2xl bg-[rgb(225,129,84)] border text-white py-5 px-14  duration-500 hover:bg-transparent transition">
                     Shop Now
                 </button>
             </div>
@@ -83,9 +83,9 @@ function Section3() {
 
 
 
-            <div class="w-full bg-[rgb(31,31,31)] py-24 px-10 flex justify-between items-start">
+            <div class="w-full bg-black grid grid-cols-3 p-[3%]">
 
-                <div class="w-1/3">
+                <div class="w-full">
                     <h1 class="text-4xl text-[rgb(225,129,84)] font-semibold mb-6">Celastise</h1>
                     <p class="text-white text-xl leading-relaxed font-sans">
                         Discover premium wrist watches
@@ -109,13 +109,19 @@ function Section3() {
 
                 <div class="w-1/3">
                     <h2 class="text-3xl text-[rgb(225,129,84)] font-semibold mb-6">Social</h2>
-                    <div class="flex items-center space-x-10 text-4xl">
-                        <FaFacebookF class="hover:text-[rgb(225,129,84)] duration-500 text-blue-600 cursor-pointer"/>
-                        <FaWhatsapp class="hover:text-[rgb(225,129,84)] duration-500 text-green-500 cursor-pointer"/>
-                        <FaInstagram class="hover:text-[rgb(225,129,84)] duration-500 text-red-600 cursor-pointer"/>
+                    <div className="flex items-center space-x-10 text-4xl">
+                        <a href="https://www.facebook.com/celastise" target="_blank" rel="noopener noreferrer">
+                            <FaFacebookF className="hover:text-[rgb(225,129,84)] duration-500 text-blue-600 cursor-pointer" />
+                        </a>
 
+                        <a href="https://wa.me/+8801558156964" target="_blank" rel="noopener noreferrer">
+                            <FaWhatsapp className="hover:text-[rgb(225,129,84)] duration-500 text-green-500 cursor-pointer" />
+                        </a>
+
+                        <a href="https://www.instagram.com/celastise/" target="_blank" rel="noopener noreferrer">
+                            <FaInstagram className="hover:text-[rgb(225,129,84)] duration-500 text-red-600 cursor-pointer" />
+                        </a>
                     </div>
-
 
                 </div>
 

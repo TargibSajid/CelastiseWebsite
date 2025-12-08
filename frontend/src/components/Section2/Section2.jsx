@@ -12,8 +12,8 @@ function Section2() {
         <section id="Section2" class="w-full  h-auto">
             <div class="w-full    max-sm:h-auto  top-0  bg-black flex justify-center items-center p-[min(60px,5%)]  ">
                 <center>
-                    <h2 class="text-[clamp(2rem,3vw,10rem)] font-serif drop-shadow-[0_0_2px_black] text-[rgb(225,129,84)] m-5">Time Perfected Daily</h2>
-                    <h2 class=" text-[clamp(1rem,1.5vw,5rem)] leading-normal font-sans drop-shadow-[0_0_2px_black] p-[min(40px,2%)] sm:w-3/5 ">
+                    <h2 class="text-[clamp(2rem,3vw,10rem)] leading-relaxed font-serif drop-shadow-[0_0_2px_black] text-[rgb(225,129,84)] m-5">Time Perfected Daily</h2>
+                    <h2 class=" text-[clamp(1.3rem,1.5vw,5rem)] leading-normal font-sans drop-shadow-[0_0_2px_black] p-[min(40px,2%)] sm:w-3/5 ">
                         At Celastise, we believe time is more than just hours and minutes—it’s an experience. Our exclusive selection of automatic and quartz watches brings together innovation, elegance, and enduring quality. Discover timepieces that reflect sophistication, reliability, and timeless design — made to complement every moment of your life.
                     </h2>
                 </center>
@@ -50,23 +50,23 @@ function Section2() {
 
 
 
-            <div class="grid lg:grid-cols-[60%_40%] max-lg:grid-rows-3 lg:divide-x lg:divide-[rgb(225,129,84)] bg-black lg:h-200 max-lg:h-auto">
+            <div class="grid lg:grid-cols-[60%_40%] max-lg:grid-rows-2  bg-black lg:h-200 max-lg:h-auto">
 
-                <div class=" self-start h-[70%] w-[80%] justify-self-center  p-[min(20px,2%)]">
+                <div class=" self-center lg:h-[70%] lg:w-[80%] justify-self-center  p-[min(20px,2%)]">
 
-                    <h2 class="text-6xl font-serif text-[rgb(225,129,84)]  mb-6">
+                    <h2 class="text-[clamp(2rem,3vw,10rem)] leading-relaxed font-serif text-[rgb(225,129,84)]  max-lg:text-center  mb-6">
                         What Our Customers Say
                     </h2>
-                    <p class="text-3xl italic text-white leading-relaxed  text-left">
+                    <p class="text-[clamp(1.3rem,1.5vw,5rem)] italic text-white leading-relaxed max-lg:text-center  text-left">
                         The quality of watches at Celastise exceeded my expectations completely.
                         My Patek Philippe purchase was seamless and arrived perfectly packaged.
                     </p>
-                    <p class="mt-4 text-[rgb(225,129,84)]  font-medium text-2xl ">Michael Thompson</p>
+                    <p class="mt-4 text-[rgb(225,129,84)] max-lg:text-center font-medium text-2xl ">Michael Thompson</p>
 
                 </div>
 
 
-                <div class=" h-170 rounded-4xl w-[70%] justify-self-start self-start  text-black bg-[url('/Background/CusRevBG.jpg')] bg-contain bg-fixed bg-position-[230px_center] " id="cusrev"></div>
+                <div class=" aspect-square rounded-4xl w-[70%] max-lg:mb-[10%] max-lg:mt-[10%] justify-self-start self-start max-lg:justify-self-center   text-black bg-[url('/Background/CusRevBG.jpg')] lg:bg-contain max-lg:bg-cover bg-fixed lg:bg-position-[300px_center] max-lg:bg-position-[480px_center] " id="cusrev"></div>
 
 
             </div>
