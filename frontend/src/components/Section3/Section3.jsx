@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
-import { FaFacebookF, FaLinkedinIn, FaInstagram, FaWhatsapp } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+
 
 
 
 function Section3() {
     return (
         <section id="Section3" className="w-full h-auto bg-black">
-            <div className="w-full  lg:h-[950px] h-[500px] bg-[url('/Background/LogoRose.webp')]  lg:bg-cover  max-lg:bg-no-repeat max-lg:bg-size-[100%_100%] lg:bg-fixed bg-position-[center_40%] border-[rgb(225,129,84)] border-4 ">
+            <div className="w-full  lg:h-237.5 h-125 bg-[url('/Background/LogoRose.webp')]  lg:bg-cover  max-lg:bg-no-repeat max-lg:bg-size-[100%_100%] lg:bg-fixed bg-position-[center_40%] border-[rgb(225,129,84)] border-4 ">
             </div>
 
 
@@ -83,49 +82,7 @@ function Section3() {
 
 
 
-            <div className="w-full bg-black grid sm:grid-cols-3 max-sm:grid-rows-3 p-[3%]">
-
-                <div className="w-full p-[3%]">
-                    <h1 className="text-4xl text-[rgb(225,129,84)] font-semibold max-sm:text-center mb-6">Celastise</h1>
-                    <p className="text-white text-xl leading-relaxed max-sm:text-center max-sm:justify-self-center font-sans w-[70%] ">
-                        Discover premium wrist watches
-                        from renowned brands like Patek
-                        Philippe, Fossil, Casio, and Olevs at
-                        Celastise.
-                    </p>
-                </div>
-
-
-                <div className="w-full p-[3%]">
-                    <h2 className="text-2xl text-[rgb(225,129,84)] max-sm:text-center font-semibold mb-6">Pages</h2>
-                    <ul className="space-y-3 text-xl text-white  max-sm:text-center max-sm:justify-self-center font-sans w-[50] ">
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Blog</li>
-                        <li>Contact</li>
-                    </ul>
-                </div>
-
-
-                <div className="w-full p-[3%]">
-                    <h2 className="text-3xl text-[rgb(225,129,84)] max-sm:text-center font-semibold mb-6">Social</h2>
-                    <div className="flex items-center max-sm:justify-center space-x-10 text-4xl">
-                        <a href="https://m.me/celastise?ref=Alvism" target="_blank" rel="noopener noreferrer">
-                            <FaFacebookF className="hover:text-[rgb(225,129,84)] duration-500 text-blue-600 cursor-pointer" />
-                        </a>
-
-                        <a href="https://wa.me/+8801558156964" target="_blank" rel="noopener noreferrer">
-                            <FaWhatsapp className="hover:text-[rgb(225,129,84)] duration-500 text-green-500 cursor-pointer" />
-                        </a>
-
-                        <a href="https://www.instagram.com/celastise/" target="_blank" rel="noopener noreferrer">
-                            <FaInstagram className="hover:text-[rgb(225,129,84)] duration-500 text-red-600 cursor-pointer" />
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>
+           
 
 
 
