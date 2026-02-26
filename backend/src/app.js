@@ -1,13 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 const session = require("express-session");
-require("dotenv").config(); // MUST be first line
+require("dotenv").config();
+const path = require("path"); // MUST be first line
 
 const app = express();
 
 // CORS setup to allow cookies
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: "https://localhost:5173",
   credentials: true
 }))
 

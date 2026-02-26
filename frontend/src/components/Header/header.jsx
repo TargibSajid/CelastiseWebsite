@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 import Shop from "../../Pages/Shop";
 
 function NavBar({ setActive, setIsOpen }) {
+  const navigate = useNavigate();
   return (
     <nav className="text-white text-[clamp(1rem,1.4vw,2rem)] font-sans overflow-hidden transition-all duration-1000 ease-out ">
       <ul className="flex flex-row h-full w-full justify-start items-center flex-wrap max-md:flex-col gap-4">
@@ -12,7 +14,7 @@ function NavBar({ setActive, setIsOpen }) {
             href="#home"
             className="hover:text-[rgb(225,129,84)] duration-500 "
             onClick={() => {
-              setActive("home");
+              navigate("/");
               setIsOpen(false);
             }}
           >
@@ -24,7 +26,7 @@ function NavBar({ setActive, setIsOpen }) {
             href="#about"
             className="hover:text-[rgb(225,129,84)] duration-500"
             onClick={() => {
-              setActive("about");
+              navigate("/about");
               setIsOpen(false);
             }}
           >
@@ -36,7 +38,7 @@ function NavBar({ setActive, setIsOpen }) {
             href="#shop"
             className="hover:text-[rgb(225,129,84)] duration-500"
             onClick={() => {
-              setActive("shop");
+              navigate("/shop");
               setIsOpen(false);
             }}
           >
@@ -45,10 +47,10 @@ function NavBar({ setActive, setIsOpen }) {
         </li>
         <li className="m-[min(20px,20%)]">
           <a
-            href="#contact"
+            href=""
             className="hover:text-[rgba(225,129,84,0.82)] duration-500 "
             onClick={() => {
-              setActive("contact");
+              navigate("/contact");
               setIsOpen(false);
             }}
           >
@@ -61,6 +63,8 @@ function NavBar({ setActive, setIsOpen }) {
 }
 
 function Header({ setActive }) {
+
+  const navigate = useNavigate();
   const [cartCount, setCartCount] = useState(0);
 
   const [isOpen, setIsOpen] = useState(window.innerWidth >= 768);
@@ -88,10 +92,10 @@ function Header({ setActive }) {
       <header className="w-full h-full  relative bg-transparent grid md:grid-cols-2 max-md:grid-rows  grid-wrap items-center justify-center">
         <div className=" w-full h-full flex justify-center">
           <img
-            src="./Background/Logo.webp"
+            src="/Background/Logo.webp"
             className=" w-[32%] max-md:w-full relative object-cotain "
             alt="Logo"
-            onClick={() => setActive("home")}
+            onClick={() => navigate("/")}
           />
         </div>
 
@@ -101,7 +105,7 @@ function Header({ setActive }) {
             onClick={() => setIsOpen(!isOpen)}
           >
             <img
-              src={isOpen ? "./Background/Cross.png" : "./Background/List.png"}
+              src={isOpen ? "/Background/Cross.png" : "/Background/List.png"}
               className={`p-[10%] transition-transform duration-1000 ease-in-out ${
                 isOpen ? "rotate-90" : "rotate-0"
               }`}
@@ -109,13 +113,12 @@ function Header({ setActive }) {
             />
           </button>
         )}
-        {isOpen && <NavBar setActive={setActive} setIsOpen={setIsOpen} />}
+        {isOpen && <NavBar  setIsOpen={setIsOpen} />}
 
         <button
           className="text-white absolute right-60 text-[clamp(1.1rem,1.5vw,1.6rem)] border-2 rounded-3xl border-[rgb(225,129,84)] p-5 transition-all duration-500 hover:bg-[rgb(225,129,84)] hover:text-black max-lg:fixed max-lg:bottom-1 max-lg:right-2 z-50 "
           onClick={() => {
-            setActive("cart");
-            setCartCount(cartCount + 1);
+            navigate('')
           }}
         >
           <FaShoppingCart className="w-6 h-6 " />
@@ -146,7 +149,7 @@ function Header({ setActive }) {
     hover:text-black
     max-md:static max-md:translate-y-0 max-md:mt-4
   "
-          onClick={() => setActive("signIN")}
+          onClick={() =>{navigate("/login");} }
         >
           Sign in
         </button>

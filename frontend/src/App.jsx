@@ -10,6 +10,7 @@ import AdminPanel from './Pages/AdminPanel.jsx';
 import Product from './Pages/Product.jsx';
 import Cart from './Pages/Cart.jsx';
 import Checkout from './Pages/Checkout.jsx';
+import { Routes, Route } from "react-router-dom";
 
 
 function App() {
@@ -17,48 +18,29 @@ function App() {
     const [active, setActive] = useState("home");
     const [ProductID, setProductID] = useState(0);
 
-
-    if(active === "signIN") {
-
-      return (
-        <>
-        <Login setActive={setActive} />
-        </>
-      );
-
-    }
-
-    else if(active === "signUP") {
-
-      return (
-        <>
-        <Register setActive={setActive} />
-        </>
-      );
-
-    }
-
-    else {
-
     return (
     <>
 
-    <Header setActive={setActive} />
+    
 
-    {active === "home" && <Home />}
-    {active === "shop" && <Shop setActive={setActive} setProductID={setProductID} />}
-    {active === "contact" }
-    {active === "about" }
-    {active === "admin" && <AdminPanel />}
-    {active === "product" && <Product ProductID={ProductID} />}
-    {active === "cart" && <Cart setActive={setActive} />}
-    {active === "Checkout" && <Checkout />}
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/shop" element={<Shop setProductID={setProductID} />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/admin" element={<AdminPanel />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path= "/product/:id"  element={<Product/>} />
+      </Routes>
+
     </>
 
   );
 
 
-    }
+
 
 
 }

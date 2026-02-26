@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import Footer from "../components/Footer/footer";
+import Header from "../components/Header/header";
+import { useParams } from "react-router-dom";
 
-export default function Product({ProductID}) {
+
+
+
+
+
+export default function Product() {
 
 const [product, setProduct] = useState(null);
+const  id  = useParams().id;
 
-useEffect(() => { fetch(`http://localhost:5000/api/watches/info?p=${encodeURIComponent(ProductID)}`) // your API
+useEffect(() => { fetch(`https://www.celastise.com/api/watches/info?p=${encodeURIComponent(id)}`)
 
 .then(res => res.json())
 
@@ -17,50 +25,56 @@ useEffect(() => { fetch(`http://localhost:5000/api/watches/info?p=${encodeURICom
 
 
 .catch(err => console.log("Error fetching:", err));
-}, [ProductID]);
+}, [id]);
 
-useEffect(() => {
 
-console.log("Is Array:", Array.isArray(product));
-console.log("Product:", product);
+  console.log("Product outside useEffect:", product);
+  const [selectedImage, setSelectedImage] = useState("");
+  console.log("Selected Image:", selectedImage);
+  const [quantity, setQuantity] = useState(1);
+  const [selectedColor, setSelectedColor] = useState("");
+  console.log("Selected Color:", selectedColor);
 
-  console.log("Product updated:", product?.[0].name);
+  useEffect(() => {
+  if (product && product[0]) {
+    const defaultColor = product[0].color;
+
+    setSelectedColor(defaultColor);
+    setSelectedImage(
+      `${product[0].image_url}/${defaultColor}/Front.jpeg`
+    );
+  }
 }, [product]);
 
 
-  const [selectedImage, setSelectedImage] = useState("./images/Hublot-main.jpeg");
-  const [quantity, setQuantity] = useState(1);
-  const [selectedColor, setSelectedColor] = useState("black");
+
 
   const images = [
-    "./Collection/Hublot/Hublot automatic.jpeg",
-    "./Collection/Hublot/Hublot automatic.jpeg",
-    "./Collection/Hublot/Hublot automatic.jpeg",
-    "./Collection/Hublot/Hublot automatic.jpeg",
+    `${product?.[0].image_url}/${selectedColor}/Front.jpeg`,
+    `${product?.[0].image_url}/${selectedColor}/Left.jpeg`,
+    `${product?.[0].image_url}/${selectedColor}/Right.jpeg`,
+    `${product?.[0].image_url}/${selectedColor}/Overview.jpeg`,
+    `${product?.[0].image_url}/${selectedColor}/Side.jpeg`,
   ];
 
-  const colors = ["black", "gray", "green"];
+  const colors = product?.[0].available_color ? product[0].available_color.split(",") : ["black", "silver", "gold"];
 
-  const relatedProducts = [
-    { name: "Armani Exchange", price: "৳2,299.00", discount: "-62%", image: "./images/armani1.jpeg" },
-    { name: "Armani Exchange AX", price: "৳2,100.00", discount: "-40%", image: "./images/armani2.jpeg" },
-    { name: "Armani Exchange AX1722", price: "৳2,199.00", discount: "-51%", image: "./images/armani3.jpeg" },
-    { name: "Armani Exchange AX2098", price: "৳1,899.00", discount: "-63%", image: "./images/armani4.jpeg" },
-    { name: "Armani Exchange AX2098", price: "৳2,099.00", discount: "-57%", image: "./images/armani5.jpeg" },
-    { name: "Armani Exchange AX2152", price: "৳2,399.00", discount: "-68%", image: "./images/armani6.jpeg" },
-  ];
+
+
+  const [relatedProducts, setRelatedProducts] = useState([]);
+
+  useEffect(() => {   fetch(`https://www.celastise.com/api/watches/related?p=${encodeURIComponent(id)}`) // your API
+
+.then(res => res.json())
+.then(data => { setRelatedProducts(data); // save the array in state
+})
+.catch(err => console.log("Error fetching:", err));
+}, [id]);
 
   return (
-    <div className="bg-black text-white">
-      {/* Breadcrumb */}
-      <div className="px-4 sm:px-6 lg:px-8 py-4 text-sm text-gray-500">
-
-        <span className="font-semibold text-white">
-          
-          {product?.[0].name || "Loading..."}
-
-        </span>
-      </div>
+    <>
+    <Header/>
+    <div className = "bg-black text-white">
 
       {/* Main Section */}
       <div className="px-4 sm:px-6 lg:px-8 py-6 grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -70,6 +84,7 @@ console.log("Product:", product);
             <img
               src={selectedImage}
               alt={product?.[0].name || "Loading..."}
+              loading="lazy"
               className="rounded-xl w-full h-auto shadow-lg"
             />
             <div className="absolute top-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded">
@@ -104,9 +119,10 @@ console.log("Product:", product);
               <img
                 key={i}
                 src={img}
-                alt={`Hublot ${i}`}
+                loading="lazy"
+                alt={`${product?.[0].name} ${i}`}
                 className={`w-20 h-20 object-cover rounded-lg cursor-pointer border-2 shrink-0 ${
-                  selectedImage === img ? "border-yellow-500" : "border-gray-200"
+                  selectedImage === img ? "border-yellow-500 border-5 " : "border-gray-200"
                 }`}
                 onClick={() => setSelectedImage(img)}
               />
@@ -142,7 +158,7 @@ console.log("Product:", product);
                 <button
                   key={color}
                   className={`w-6 h-6 rounded-full border-2 border-gray-300 ${
-                    selectedColor === color ? "border-black" : ""
+                    selectedColor === color ? "border-white border-4" : ""
                   }`}
                   style={{ backgroundColor: color }}
                   onClick={() => setSelectedColor(color)}
@@ -172,8 +188,6 @@ console.log("Product:", product);
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="flex-1 bg-[rgb(225,129,84)] text-2xl font-sans text-white py-3 rounded hover:bg-white hover:text-[rgb(225,129,84)] justify-center transition-all duration-1000 ">
               <center><FaShoppingCart/> Add to Cart</center>
-              
-              
             </button>
             <button className="flex-1 bg-gray-200 text-[rgb(225,129,84)] py-3 text-2xl font-sans rounded hover:bg-[rgba(225,129,84)] hover:text-white transition">
               Buy Now
@@ -206,13 +220,13 @@ console.log("Product:", product);
         <div className="bg-[rgb(31,31,31)] p-6 rounded-lg space-y-4">
           <h2 className="font-semibold text-lg">Features</h2>
           <ul className="list-disc pl-5 text-white space-y-1">
-            <li> <span className="text-[rgb(225,129,84)]">Dial:</span> Jet-black with luminous markers</li>
-            <li><span className="text-[rgb(225,129,84)]">Case:</span> Stainless steel, 44mm (approx.)</li>
-            <li><span className="text-[rgb(225,129,84)]">Strap:</span> Solid stainless steel bracelet with adjustable links</li>
-            <li><span className="text-[rgb(225,129,84)]">Glass:</span> Scratch-resistant mineral crystal</li>
-            <li><span className="text-[rgb(225,129,84)]">Movement:</span> Precision quartz (±3 sec/day)</li>
-            <li><span className="text-[rgb(225,129,84)]">Water Resistance:</span> 50 meters (splash & rain resistant)</li>
-            <li><span className="text-[rgb(225,129,84)]">Includes:</span> Branded box + 1-year warranty card</li>
+            <li> <span className="text-[rgb(225,129,84)]">Dial:</span> {product?.[0].dial || "  Loading..."}</li>
+            <li><span className="text-[rgb(225,129,84)]">Case:</span> {product?.[0].watch_case || "  Loading..."}</li>
+            <li><span className="text-[rgb(225,129,84)]">Strap:</span>{product?.[0].strap_type || "  Loading..."}</li>
+            <li><span className="text-[rgb(225,129,84)]">Glass:</span> {product?.[0].glass || "  Loading..."}</li>
+            <li><span className="text-[rgb(225,129,84)]">Movement:</span>{product?.[0].movement || "  Loading..."} </li>
+            <li><span className="text-[rgb(225,129,84)]">Water Resistance:</span> {product?.[0].water_resistant || "  Loading..."} </li>
+            <li><span className="text-[rgb(225,129,84)]">Includes:</span> {product?.[0].include || "  Loading..."}</li>
           </ul>
           <p className="text-white text-lg">
             The <span className="text-[rgb(225,129,84)]">{product?.[0].name || "Loading..."}</span> Watch is all about presence. Bold, modern, and unmistakably stylish...
@@ -237,9 +251,9 @@ console.log("Product:", product);
         <h2 className="text-lg font-semibold mb-4">You may also like</h2>
         <div className="flex gap-4 overflow-x-auto pb-4">
           {relatedProducts.map((p, i) => (
-            <div key={i} className="w-48 shrink-0 bg-white rounded-lg shadow hover:shadow-xl transition">
+            <div key={i} className="w-48 shrink-0 bg-[rgb(31,31,31)] rounded-lg shadow hover:shadow-xl transition">
               <div className="relative">
-                <img src={p.image} alt={p.name} className="w-full h-40 object-cover rounded-t-lg" />
+                <img src={p.image} loading="lazy" alt={p.name} className="w-full h-40 object-cover rounded-t-lg" />
                 <div className="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded">
                   {p.discount}
                 </div>
@@ -255,7 +269,8 @@ console.log("Product:", product);
       </div>
 
       {/* Footer */}
-       <Footer/>   
+        <Footer/>
     </div>
+    </>
   );
 }

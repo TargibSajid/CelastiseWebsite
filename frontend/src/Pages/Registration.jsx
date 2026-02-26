@@ -39,7 +39,7 @@ const handleChange = (e) => { setFormData({...FormData, [e.target.name]: e.targe
 
 useEffect(() => {console.log(FormData)}, [FormData]);
 
-const Registration = () => {fetch("http://localhost:5000/api/users/create", {
+const Registration = () => {fetch("https://www.celastise.com/api/users/create", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"
@@ -55,7 +55,7 @@ const Registration = () => {fetch("http://localhost:5000/api/users/create", {
 
         {/* Logo */}
         <img
-          src="./Background/Logo.webp"
+          src="/Background/Logo.webp"
           alt="Celastise Logo"
           className="mx-auto w-50 h-40 sm:w-60 sm:h-40 md:w-80 md:h-60"
         />
@@ -173,7 +173,7 @@ const Registration = () => {fetch("http://localhost:5000/api/users/create", {
     onSuccess={(credentialResponse) => {
       const token = credentialResponse.credential;
 
-      fetch("http://localhost:5000/auth/google", {
+      fetch("https://www.celastise.com/auth/google", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

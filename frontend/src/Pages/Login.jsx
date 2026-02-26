@@ -96,7 +96,7 @@ useEffect(()=>{console.log(email, password)}, [email, password]);
             mb-6
             text-2xl
           "
-          onClick={() => {fetch("http://localhost:5000/api/users/login",{
+          onClick={() => {fetch("https://www.celastise.com/api/users/login",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({email: email, password:password})
@@ -123,7 +123,7 @@ useEffect(()=>{console.log(email, password)}, [email, password]);
     onSuccess={(credentialResponse) => {
       const token = credentialResponse.credential;
 
-      fetch("http://localhost:5000/auth/google", {
+      fetch("https://www.celastise.com/auth/google", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
