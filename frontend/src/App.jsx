@@ -16,7 +16,6 @@ import { Routes, Route } from "react-router-dom";
 function App() {
 
     const [active, setActive] = useState("home");
-    const [ProductID, setProductID] = useState(0);
 
     return (
     <>
@@ -26,7 +25,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/shop" element={<Shop setProductID={setProductID} />} />
+        <Route path="/shop" element={<Shop/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/admin" element={<AdminPanel />} />

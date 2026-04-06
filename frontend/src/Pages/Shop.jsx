@@ -36,7 +36,7 @@ const navigate = useNavigate();
   );
 }
 
-function Shop({ setProductID }) {
+function Shop() {
 
   const [products, setProducts] = useState([]);
 
@@ -152,7 +152,7 @@ useEffect(() => {
           <ProductCard
             key={index}
             ID={product.product_id}
-            image={`${product.image_url}/${product.color}/Front.jpeg`}
+            image={`${product.image_url}/${product.color}/Front.webp`}
             name={product.name}
             price={`${product.price}৳`}
           />

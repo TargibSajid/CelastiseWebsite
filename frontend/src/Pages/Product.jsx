@@ -41,7 +41,7 @@ useEffect(() => { fetch(`https://www.celastise.com/api/watches/info?p=${encodeUR
 
     setSelectedColor(defaultColor);
     setSelectedImage(
-      `${product[0].image_url}/${defaultColor}/Front.jpeg`
+      `${product[0].image_url}/${defaultColor}/Front.webp`
     );
   }
 }, [product]);
@@ -50,11 +50,11 @@ useEffect(() => { fetch(`https://www.celastise.com/api/watches/info?p=${encodeUR
 
 
   const images = [
-    `${product?.[0].image_url}/${selectedColor}/Front.jpeg`,
-    `${product?.[0].image_url}/${selectedColor}/Left.jpeg`,
-    `${product?.[0].image_url}/${selectedColor}/Right.jpeg`,
-    `${product?.[0].image_url}/${selectedColor}/Overview.jpeg`,
-    `${product?.[0].image_url}/${selectedColor}/Side.jpeg`,
+    `${product?.[0].image_url}/${selectedColor}/Front.webp`,
+    `${product?.[0].image_url}/${selectedColor}/Left.webp`,
+    `${product?.[0].image_url}/${selectedColor}/Right.webp`,
+    `${product?.[0].image_url}/${selectedColor}/Overview.webp`,
+    `${product?.[0].image_url}/${selectedColor}/Side.webp`,
   ];
 
   const colors = product?.[0].available_color ? product[0].available_color.split(",") : ["black", "silver", "gold"];
