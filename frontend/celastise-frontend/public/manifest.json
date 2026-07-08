@@ -1,0 +1,15 @@
+{
+  "name": "CELASTISE Luxury Watches",
+  "short_name": "CELASTISE",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf8f6",
+  "theme_color": "#ba9d7f",
+  "icons": [
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
