@@ -1,0 +1,5 @@
+'use client';
+import { FormEvent, useState } from 'react';
+import Link from 'next/link';
+import { api } from '@/lib/api';
+export default function LoginPage(){ const [msg,setMsg]=useState(''); async function submit(e:FormEvent<HTMLFormElement>){e.preventDefault(); const fd=new FormData(e.currentTarget); try{await api.login(String(fd.get('email')),String(fd.get('password'))); setMsg('Logged in successfully. Your session cookie is saved.')}catch{setMsg('Login failed. Check backend and account.')}} return <main className="min-h-screen bg-celastise-50 py-16"><form onSubmit={submit} className="max-w-md mx-auto bg-white p-8 rounded-2xl shadow space-y-5"><h1 className="text-3xl font-bold">Login</h1><input required name="email" type="email" placeholder="Email" className="w-full border p-3 rounded"/><input required name="password" type="password" placeholder="Password" className="w-full border p-3 rounded"/><button className="w-full py-3 bg-rose-500 text-white rounded-lg font-bold">Login</button><p>Need an account? <Link href="/signup" className="text-rose-500">Sign up</Link></p>{msg&&<p className="text-sm text-celastise-700">{msg}</p>}</form></main>}
